@@ -2,66 +2,78 @@
   <h2>Personajes en Harry Potter</h2>
 
 
-  <div class="row">
-    <div class="col-12">
+  <div>
+    <div>
       <button
         class="btn btn-primary mb-3"
         (click)="mostrarPersonajes()">{{verPersonajes ? 'Ocultar todos': 'Mostrar todos los personajes'}}
       </button>
     </div>
-    <div class="c-flex">
-      <div *ngIf="!verPersonajes && personajeEncontrado" class="card">
-        <img [src]="personajeEncontrado.image" class="card-img-top" [alt]="personajeEncontrado.fullName" />
-        <div class="card-body text-center">
-            <h5 class="card-title">{{ personajeEncontrado.fullName }}</h5>
-            <p class="card-text">Casa asignada en Howarts: {{ personajeEncontrado.hogwartsHouse }}</p>
-            <p class="card-text">Nickname: {{ personajeEncontrado.nickname }}</p>
-            <p class="card-text">Interpretado en las películas por: {{ personajeEncontrado.interpretedBy }}</p>
-            <p class="card-text">Fecha de nacimiento: {{ personajeEncontrado.birthdate }}</p>
+    <br>
+      <div *ngIf="!verPersonajes && personajeEncontrado" class="row justify-content-center">
+        <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12">
+          <div class="card">
+            <img [src]="personajeEncontrado.image" class="img-responsive" [alt]="personajeEncontrado.fullName"/>
+
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ personajeEncontrado.fullName }}</h5>
+                <p class="card-text">Casa asignada en Howarts: {{ personajeEncontrado.hogwartsHouse }}</p>
+                <p class="card-text">Nickname: {{ personajeEncontrado.nickname }}</p>
+                <p class="card-text">Interpretado en las películas por: {{ personajeEncontrado.interpretedBy }}</p>
+                <p class="card-text">Fecha de nacimiento: {{ personajeEncontrado.birthdate }}</p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+
   </div>
 
   <div class="row">
-    <div class="col-12"></div>
-    <div *ngIf="!verPersonajes" class="m-b-3">
-      <input
-        type="text"
-        class="form-control mb-3"
-        placeholder="Busca personajes por nombre"
-        [(ngModel)]="pbusqueda"
-        (input)="mostrarPersonaje()"
-        [attr.list]="'nombres'"
-      />
+    <div class="col-12">
 
+      <div *ngIf="!verPersonajes" class="m-b-3">
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="Busca personajes por nombre"
+          [(ngModel)]="pbusqueda"
+          (input)="mostrarPersonaje()"
+          [attr.list]="'nombres'"
+        />
+
+      </div>
+    </div>
+    <!--div class="col-12">
       <datalist id="nombres">
         <option *ngFor="let p of personajes" [value]="p.fullName"></option>
       </datalist>
-    </div>
+
+    </div-->
+  </div>
+  <div class="row" *ngIf="verPersonajes">
+
+        <div *ngFor="let p of personajes" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <img [src]="p.image" class="img-responsive shorter-image" [alt]="p.fullName" />
+                <h5 class="card-title">{{ p.fullName }}</h5>
+                <p class="card-text">Casa asignada en Howarts: {{ p.hogwartsHouse }}</p>
+                <p class="card-text">Nickname: {{ p.nickname }}</p>
+                <p class="card-text">Interpretado en las películas por: {{ p.interpretedBy }}</p>
+                <p class="card-text">Fecha de nacimiento: {{ p.birthdate }}</p>
+            </div>
+        </div>
+
+
 
   </div>
 
-
-  <div class="row">
-
-    <div *ngIf="verPersonajes" class="d-flrex justify-content-center">
-      <div *ngFor="let p of personajes" class="card. m-2" style="width: 12rem;">
-        <img [src]="p.image" class="card-img-top" [alt]="p.fullName" />
-        <div class="card-body text-center">
-            <h5 class="card-title">{{ p.fullName }}</h5>
-            <p class="card-text">Casa asignada en Howarts: {{ p.hogwartsHouse }}</p>
-            <p class="card-text">Nickname: {{ p.nickname }}</p>
-            <p class="card-text">Interpretado en las películas por: {{ p.interpretedBy }}</p>
-            <p class="card-text">Fecha de nacimiento: {{ p.birthdate }}</p>
-        </div>
-
-      </div>
-
-    </div>
 </div>
 
 
 
 
-</div>
+
+
+
