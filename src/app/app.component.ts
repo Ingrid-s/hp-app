@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hp-app';
+  seccionActiva: string = 'personajes';
+
+  mostrarSeccion(seccion: string) {
+    this.seccionActiva = seccion;
+  }
 }

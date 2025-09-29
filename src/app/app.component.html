@@ -1,1 +1,37 @@
-<app-personajes></app-personajes>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Marca o título -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Harry Potter App</a>
+    </div>
+
+    <!-- Opciones del menú -->
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="#" (click)="mostrarSeccion('personajes')">Personajes</a>
+      </li>
+      <li><a href="#" (click)="mostrarSeccion('libros')">Libros</a></li>
+      <li><a href="#" (click)="mostrarSeccion('casas')">Casas</a></li>
+      <li><a href="#" (click)="mostrarSeccion('hechizos')">Hechizos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Aquí cargaremos el contenido según la opción seleccionada -->
+<div class="container">
+  <app-personajes *ngIf="seccionActiva === 'personajes'">
+     <h2>Personajes en Harry Potter</h2>
+  </app-personajes>
+
+  <app-libros *ngIf="seccionActiva === 'libros'">
+    <h2>Libros</h2>
+  </app-libros>
+  <app-casas *ngIf="seccionActiva === 'casas'">
+    <h2>Casas de Howarts</h2>
+  </app-casas>
+  <app-hechizos *ngIf="seccionActiva === 'hechizos'">
+    <h3>Hechizos</h3>
+  </app-hechizos>
+</div>
+
+

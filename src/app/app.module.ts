@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PersonajesComponent } from './components/personajes/personajes.component';
+import { LibrosComponent } from './components/libros/libros.component';
+import { CasasComponent } from './components/casas/casas.component';
+import { HechizosComponent } from './components/hechizos/hechizos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonajesComponent
+    PersonajesComponent,
+    LibrosComponent,
+    CasasComponent,
+    HechizosComponent
   ],
   imports: [
     BrowserModule,
