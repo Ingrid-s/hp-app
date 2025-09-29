@@ -1,1 +1,18 @@
-<p>casas works!</p>
+<h2>Casas en Howarts</h2>
+
+<div class="row" *ngIf="casas.length > 0">
+  <div *ngFor="let casa of casas" class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mb-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">{{ casa.name }}</h4>
+      </div>
+      <div class="panel-body" style="height: 180px; overflow-y: auto;">
+        <p><strong>Casa:</strong> {{ casa.house }}</p>
+        <p><strong>Fundador:</strong> {{ casa.founder }}</p>
+        <p><strong>Colores:</strong> {{ casa.colors.join(', ') }}</p>
+        <p><strong>Animal:</strong> {{ casa.animal }}</p>
+        <p><strong>Emoji:</strong> {{ casa.emoji }}</p>
+      </div>
+    </div>
+  </div>
+</div>
