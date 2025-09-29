@@ -1,27 +1,18 @@
 # HpApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+El proyecto fue hecho con [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
-## Development server
+## Descripción:
+Es una web muy sensilla, hecha con angular para el consumo de una API que provee información del mundo de Harry Potter, con sus libros, casas, personajes y hechizos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionamiento:
+Basicmente se hicieron peticiones a la API "https://potterapi-fedeperin.vercel.app/es" y en la pestaña personajes se implemento verlos todos o bien a traves de un filtro de texto, regresar el personaje que coincida con el nombre tipado, para la sección de libros, se muestra información como fecha de lanzamiento, portada y título en una serie de paneles, lo mismo aplica para la sección de casas. Por ultimo se muestra la sección de Hechizos, en una tabla con paginación.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Comentarios:
+Al principio elabore un archivo html y un js, así de sencillo, elabore las peticiones a la API con fetch y piinté los personajes.
+Posteriormente decidí incorporar Angular en su versión 16 y hacer las peticiones a traves de HttpClient, añadí unos pocos estilos sólo para la distribución de la información, el despliegue lo hice directo en github pages, pues ya antes había usado esta herramienta para despliegues.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Despliegue y Repo:
+[Link a página: ]https://ingrid-s.github.io/hp-app/#
+[Link a repo: ]https://github.com/Ingrid-s/hp-app
